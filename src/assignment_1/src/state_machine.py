@@ -7,18 +7,6 @@ import smach_ros
 import time
 import random
 
-# INSTALLATION
-# - create ROS package in your workspace:
-#          $ catkin_create_pkg smach_tutorial std_msgs rospy
-# - move this file to the 'smach_tutorial/scr' folder and give running permissions to it with
-#          $ chmod +x state_machine.py
-# - run the 'roscore' and then you can run the state machine with
-#          $ rosrun smach_tutorial state_machine.py
-# - install the visualiser using
-#          $ sudo apt-get install ros-kinetic-smach-viewer
-# - run the visualiser with
-#          $ sudo apt-get install ros-kinetic-smach-viewer
-
 def user_action():
     return random.choice(['coin','push'])
 
