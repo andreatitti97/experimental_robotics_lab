@@ -14,25 +14,26 @@ from geometry_msgs.msg import Twist
 
 from assignment_1.srv import *
 
+# Initialize useful global variables
 x = 3
 y = 5
-homeX = 10
-homeY = 20
+xhome = 10
+yhome = 20
 state = "NoInfo"
 
-def decision():
+def decision(): #the decision for normal of sleep should be random
     return random.choice(['goToNormal','goToSleep'])
-
-def callbackSta(data): 
+	
+def callbackSta(data): #callback function for subscribe user_cmd node.
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
     global state 
     state = "play"
 
 
-# define state Unlocked
+# define state NORMAL
 class Normal(smach.State):
     def __init__(self):
-        # initialisation function, it should not wait
+        # Initialization function
         smach.State.__init__(self, 
                              outcomes=['goToNormal','goToSleep','goToPlay'],
                              input_keys=['unlocked_counter_in'],
@@ -41,7 +42,7 @@ class Normal(smach.State):
         self.counter = 0
         
     def execute(self,userdata):
-        # function called when exiting from the node, it can be blacking
+        
         global x
         global y
         global state
@@ -49,12 +50,12 @@ class Normal(smach.State):
         self.counter = 0
         while not rospy.is_shutdown():  
             rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
-#       userdata.unlocked_counter_out = userdata.unlocked_counter_in + 1
+
             time.sleep(2)
             if self.counter == 3:
                 return 'goToSleep'
             self.rate.sleep()
-#            navigation(x,y)
+
             rospy.loginfo(rospy.get_caller_id() + 'i m going to x: %d y: %d',x, y)
             x = x + 1
             y = y + 1
@@ -68,7 +69,7 @@ class Normal(smach.State):
         return decision()
     
 
-# define state Locked
+# Define the state SLEEP
 class Sleep(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
@@ -79,13 +80,13 @@ class Sleep(smach.State):
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
-        # simulate that we have to get 5 data samples to compute the outcome
+        
         time.sleep(5)
-        #            navigation(x,y)
-        global homeX
-        global homeY
+       
+        global xhome
+        global yhome
         rospy.loginfo(rospy.get_caller_id() + 'Executing state SLEEP ')
-        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',homeX,homeY)
+        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',xhome,yhome)
         self.rate.sleep()
         return 'goToNormal'
 
@@ -101,9 +102,9 @@ class Play(smach.State):
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
-        # simulate that we have to get 5 data samples to compute the outcome
+        
         time.sleep(3)
-        #            navigation(x,y)
+        
 
         rospy.loginfo(rospy.get_caller_id() + 'Executing state PLAY ')
         

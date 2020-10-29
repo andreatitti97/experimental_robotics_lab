@@ -5,49 +5,47 @@
 #include <stdlib.h>
 
 /*
-This node publish random position which will be used from the command manager node.
-This node simulates the pointing gesture and the random travel in normal mode as well.
+This node publish random position in the map, for simulationg both the gesture recognition and the normal behaviour where the robot move randomly
 */
 
-int main (int argc, char **argv){
+int main (int argc, char **argv)
+{
 
-//generate a random position which simulates the pointin gestiure and the travel in normal mode 
-int x = rand() % 15;
-int y = rand() % 15;
-
-//int time = rand() % 5000 + 1000;
-
-
-ros::init(argc,argv,"position_generator"); //node init
-
-ros::Publisher pub;
-ros::NodeHandle nh;
-
-pub = nh.advertise<geometry_msgs::Twist>("position", 1000); //pub and topic init 
-
-ros::Rate loop_rate(1); // that I m going to make it randomly in the simulation phase 
+	//generation of the random position
+	int x = rand() % 15;
+	int y = rand() % 15;
 
 
-while(ros::ok()){
+	ros::init(argc,argv,"position_generator"); //node initialization
 
-geometry_msgs::Twist vel; 
-    
-    vel.linear.x = x ;
-    vel.linear.y = y ;
+	ros::Publisher pub; //make the node publisher
+	ros::NodeHandle nh;
+
+	pub = nh.advertise<geometry_msgs::Twist>("position", 1000); //publisher and topic initialization
+
+	ros::Rate loop_rate(1); //rate for the loop
 
 
-    ROS_INFO("The position is x : %d and y : %d ", x,y);
+	while(ros::ok())
+	{
 
-    pub.publish(vel);
+		geometry_msgs::Twist vel; //struct were saving the posisiton to pass to the cmd_manager
+				    
+		vel.linear.x = x ;
+		vel.linear.y = y ;
 
-    ros::spinOnce();
 
-    loop_rate.sleep();
-    x = rand() % 15;
-    y = rand() % 15;
-    //sleep(time);
-    //time = rand() % 5000 + 1000;
-}
+		ROS_INFO("The position is x : %d and y : %d ", x,y);//print the position for the user
 
-return 0;
+		pub.publish(vel);//publish this position 
+
+		ros::spinOnce();
+
+		loop_rate.sleep();//delay for see the behavior
+		x = rand() % 15;
+		y = rand() % 15;
+	    
+	}
+
+	return 0;
 }
