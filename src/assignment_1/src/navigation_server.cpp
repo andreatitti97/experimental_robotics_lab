@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include "assignment_1/GoTo.h"
-#include  "geometry_msgs/Pose2D.h"
+#include  "geometry_msgs/Twist.h"
 
 // max dimension for the map
 #define Xmax 20

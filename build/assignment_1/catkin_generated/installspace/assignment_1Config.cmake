@@ -185,7 +185,7 @@ foreach(t ${assignment_1_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geom_msgs;roscpp;rospy;std_msgs;message_runtime")
+set(depends "geometry_msgs;roscpp;rospy;std_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

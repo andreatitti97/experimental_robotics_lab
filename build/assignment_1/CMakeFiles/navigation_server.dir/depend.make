@@ -5,7 +5,8 @@ assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home/andrea/catkin_ws/devel/include/assignment_1/GoToRequest.h
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home/andrea/catkin_ws/devel/include/assignment_1/GoToResponse.h
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp
-assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
+assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Twist.h
+assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /opt/ros/kinetic/include/ros/assert.h

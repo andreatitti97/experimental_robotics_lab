@@ -106,7 +106,7 @@ geometry_msgs
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES assignment_1
-  CATKIN_DEPENDS geom_msgs roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
