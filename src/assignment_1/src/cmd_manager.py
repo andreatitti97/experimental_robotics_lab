@@ -2,60 +2,139 @@
 
 from __future__ import print_function
 
+import roslib
 import rospy
+import smach
+import smach_ros
+import time
+import random
 import sys
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
 from assignment_1.srv import *
 
-# service function
+X = 0
+Y = 0
+homeX = 10
+homeY = 20
+
+# 
+def decision():
+    return random.choice(['goToNormal','goToSleep'])
+
+# callback for the get position subsriber
+def callbackPos(data):
+    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.linear.x, data.linear.y)
+    global X
+    X = data.linear.x
+    global Y 
+    Y = data.linear.y    
+
+# client function
 def navigation(x,y):
 
-    rospy.wait_for_service('navigation')
+    rospy.wait_for_service('myNavigation')
     try:
-        go_to = rospy.ServiceProxy('navigation',GoTo)
+        go_to = rospy.ServiceProxy('myNavigation',GoTo)
         check = go_to(x ,y)
         return check.o
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
- 
 
-# subsriber call back
+# define state NORMAL
+class Normal(smach.State):
+    def __init__(self):
+        # initialisation function, it should not wait
+        smach.State.__init__(self, 
+                             outcomes=['goToNormal','goToSleep'],
+                             input_keys=['unlocked_counter_in'],
+                             output_keys=['unlocked_counter_out'])
+        self.rate = rospy.Rate(1)  # Loop at 200 Hz
+        self.counter = 0
+        
+    def execute(self,userdata):
+        # function called when exiting from the node, it can be blacking
+        time.sleep(3)
+        global X
+        global Y
+        
+        self.counter = random.randint(1,2)
+        while not rospy.is_shutdown():  
+            rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
+            
+            if self.counter == 4:
+                return 'goToSleep'
+            time.sleep(3)
+            navigation(X,Y)
+#            rospy.loginfo(rospy.get_caller_id() + 'i m going to x: %d y: %d',x, y)
 
-def callbackSta(data): 
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+            self.counter += 1
+            
 
-def callbackPos(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.linear.x, data.linear.y)
-#    x = data.linear.x
-#    y = data.linear.y
+        return 'goToSleep' 
+        
+    
+
+# define state SLEEP 
+class Sleep(smach.State):
+    def __init__(self):
+        smach.State.__init__(self, 
+                             outcomes=['goToNormal','goToSleep'],
+                             input_keys=['locked_counter_in'],
+                             output_keys=['locked_counter_out'])
+        self.rate = rospy.Rate(200)  # Loop at 200 Hz
+
+    def execute(self, userdata):
+
+        time.sleep(random.randint(3,5))
+        
+        global homeX
+        global homeY
+        rospy.loginfo(rospy.get_caller_id() + 'Executing state SLEEP ')
+        navigation(homeX,homeY)
+#        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',homeX,homeY)
+        self.rate.sleep()
+        return 'goToNormal'
 
 
-# subscriber manager    
-def commandManager():
+        
+def main():
+    rospy.init_node('smach_example_state_machine')
 
-# node init 
-    rospy.init_node('commandManager', anonymous=True) 
+    rospy.Subscriber("Position", Twist, callbackPos) # subsriber get_position 
 
-    rospy.Subscriber("string_cmd", String, callbackSta)
+    # Create a SMACH state machine
+    sm = smach.StateMachine(outcomes=['container_interface'])
+    sm.userdata.sm_counter = 0
 
-    rospy.Subscriber("Position", Twist, callbackPos)
+    # Open the container
+    with sm:
+        # Add states to the container
+        smach.StateMachine.add('NORMAL', Normal(), 
+                               transitions={'goToSleep':'SLEEP', 
+                                            'goToNormal':'NORMAL'},
+                               remapping={'locked_counter_in':'sm_counter', 
+                                          'locked_counter_out':'sm_counter'})
+        smach.StateMachine.add('SLEEP', Sleep(), 
+                               transitions={'goToSleep':'SLEEP', 
+                                            'goToNormal':'NORMAL'},
+                               remapping={'unlocked_counter_in':'sm_counter',
+                                          'unlocked_counter_out':'sm_counter'})
 
-    rate = rospy.Rate(5)
 
-    x = 3
-    y = 6
+    # Create and start the introspection server for visualization
+    sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
+    sis.start()
 
-    loop = 1
-    while loop ==1:
+    # Execute the state machine
+    outcome = sm.execute()
 
-        navigation(x,y)
-        rate.sleep()
-
-    # spin() simply keeps python from exiting until this node is stopped
+    # Wait for ctrl-c to stop the application
     rospy.spin()
+    sis.stop()
+
 
 if __name__ == '__main__':
-    commandManager()
+    main()
     
