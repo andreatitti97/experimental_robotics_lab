@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/andrea/catkin_ws/build
 include assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/progress.make
 
 assignment_1/CMakeFiles/assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/user_cmd.h
-assignment_1/CMakeFiles/assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/state.h
+assignment_1/CMakeFiles/assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h
 
 
 /home/andrea/catkin_ws/devel/include/assignment_1/user_cmd.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -63,16 +63,16 @@ assignment_1/CMakeFiles/assignment_1_generate_messages_cpp: /home/andrea/catkin_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from assignment_1/user_cmd.msg"
 	cd /home/andrea/catkin_ws/src/assignment_1 && /home/andrea/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg -Iassignment_1:/home/andrea/catkin_ws/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/catkin_ws/devel/include/assignment_1 -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/andrea/catkin_ws/devel/include/assignment_1/state.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/andrea/catkin_ws/devel/include/assignment_1/state.h: /home/andrea/catkin_ws/src/assignment_1/srv/state.srv
-/home/andrea/catkin_ws/devel/include/assignment_1/state.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/andrea/catkin_ws/devel/include/assignment_1/state.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from assignment_1/state.srv"
-	cd /home/andrea/catkin_ws/src/assignment_1 && /home/andrea/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/andrea/catkin_ws/src/assignment_1/srv/state.srv -Iassignment_1:/home/andrea/catkin_ws/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/catkin_ws/devel/include/assignment_1 -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h: /home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv
+/home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from assignment_1/GoTo.srv"
+	cd /home/andrea/catkin_ws/src/assignment_1 && /home/andrea/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv -Iassignment_1:/home/andrea/catkin_ws/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/catkin_ws/devel/include/assignment_1 -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 assignment_1_generate_messages_cpp: assignment_1/CMakeFiles/assignment_1_generate_messages_cpp
 assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/user_cmd.h
-assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/state.h
+assignment_1_generate_messages_cpp: /home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h
 assignment_1_generate_messages_cpp: assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/build.make
 
 .PHONY : assignment_1_generate_messages_cpp

@@ -57,7 +57,7 @@ user_cmd.msg
 ## Generate services in the 'srv' folder
 add_service_files(
  FILES
- state.srv
+ GoTo.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -125,9 +125,13 @@ add_executable(user_cmd src/user_cmd.cpp)
 target_link_libraries(user_cmd ${catkin_LIBRARIES})
 add_dependencies(user_cmd assignment_1_generate_messages_cpp)
 
+add_executable(navigation_server src/navigation_server.cpp)
+target_link_libraries(navigation_server ${catkin_LIBRARIES})
+add_dependencies(navigation_server assignment_1_gencpp)
+
 add_executable(pos_generator src/pos_generator.cpp)
 target_link_libraries(pos_generator ${catkin_LIBRARIES})
-add_dependencies(pos_generator assignment_1_gencpp)
+add_dependencies(pos_generator assignment_1_generate_messages_cpp)
 
 #add_executable(cmd_manager src/cmd_manager.py)
 #target_link_libraries(cmd_manager ${catkin_LIBRARIES})
@@ -173,7 +177,6 @@ add_dependencies(pos_generator assignment_1_gencpp)
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-src/cmd_manager.py
 src/cmd_manager.py
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

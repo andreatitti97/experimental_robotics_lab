@@ -37,7 +37,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/srv" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/srv" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -85,10 +85,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/package.xml")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1" TYPE PROGRAM FILES "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/cmd_manager.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

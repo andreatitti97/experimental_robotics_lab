@@ -66,18 +66,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -132,6 +120,18 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -284,6 +284,21 @@ assignment_1_generate_messages_eus: assignment_1/CMakeFiles/assignment_1_generat
 assignment_1_generate_messages_eus/fast:
 	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/assignment_1_generate_messages_eus.dir/build.make assignment_1/CMakeFiles/assignment_1_generate_messages_eus.dir/build
 .PHONY : assignment_1_generate_messages_eus/fast
+
+# Convenience name for target.
+assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 assignment_1/CMakeFiles/assignment_1_gencpp.dir/rule:
@@ -571,6 +586,36 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+assignment_1/CMakeFiles/navigation_server.dir/rule:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/navigation_server.dir/rule
+.PHONY : assignment_1/CMakeFiles/navigation_server.dir/rule
+
+# Convenience name for target.
+navigation_server: assignment_1/CMakeFiles/navigation_server.dir/rule
+
+.PHONY : navigation_server
+
+# fast build rule for target.
+navigation_server/fast:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/build
+.PHONY : navigation_server/fast
+
+# Convenience name for target.
+assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
+.PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
+
+# Convenience name for target.
+_assignment_1_generate_messages_check_deps_GoTo: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
+
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo
+
+# fast build rule for target.
+_assignment_1_generate_messages_check_deps_GoTo/fast:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo/fast
+
+# Convenience name for target.
 assignment_1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
 	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : assignment_1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
@@ -660,35 +705,32 @@ assignment_1_generate_messages/fast:
 	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/assignment_1_generate_messages.dir/build.make assignment_1/CMakeFiles/assignment_1_generate_messages.dir/build
 .PHONY : assignment_1_generate_messages/fast
 
-# Convenience name for target.
-assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+src/navigation_server.o: src/navigation_server.cpp.o
 
-# Convenience name for target.
-geometry_msgs_generate_messages_py: assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : src/navigation_server.o
 
-.PHONY : geometry_msgs_generate_messages_py
+# target to build an object file
+src/navigation_server.cpp.o:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o
+.PHONY : src/navigation_server.cpp.o
 
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+src/navigation_server.i: src/navigation_server.cpp.i
 
-# Convenience name for target.
-assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/rule:
-	cd /home/andrea/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/rule
-.PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/rule
+.PHONY : src/navigation_server.i
 
-# Convenience name for target.
-_assignment_1_generate_messages_check_deps_state: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/rule
+# target to preprocess a source file
+src/navigation_server.cpp.i:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.i
+.PHONY : src/navigation_server.cpp.i
 
-.PHONY : _assignment_1_generate_messages_check_deps_state
+src/navigation_server.s: src/navigation_server.cpp.s
 
-# fast build rule for target.
-_assignment_1_generate_messages_check_deps_state/fast:
-	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/build
-.PHONY : _assignment_1_generate_messages_check_deps_state/fast
+.PHONY : src/navigation_server.s
+
+# target to generate assembly for a file
+src/navigation_server.cpp.s:
+	cd /home/andrea/catkin_ws/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.s
+.PHONY : src/navigation_server.cpp.s
 
 src/pos_generator.o: src/pos_generator.cpp.o
 
@@ -751,7 +793,6 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
@@ -765,6 +806,7 @@ help:
 	@echo "... assignment_1_generate_messages_lisp"
 	@echo "... install/strip"
 	@echo "... assignment_1_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... assignment_1_gencpp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... assignment_1_genlisp"
@@ -784,14 +826,18 @@ help:
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... install"
+	@echo "... navigation_server"
+	@echo "... _assignment_1_generate_messages_check_deps_GoTo"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... assignment_1_generate_messages"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... _assignment_1_generate_messages_check_deps_state"
+	@echo "... src/navigation_server.o"
+	@echo "... src/navigation_server.i"
+	@echo "... src/navigation_server.s"
 	@echo "... src/pos_generator.o"
 	@echo "... src/pos_generator.i"
 	@echo "... src/pos_generator.s"

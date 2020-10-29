@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment_1_generate_messages_lisp"
   "/home/andrea/catkin_ws/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp"
-  "/home/andrea/catkin_ws/devel/share/common-lisp/ros/assignment_1/srv/state.lisp"
+  "/home/andrea/catkin_ws/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 
 "use strict";
 
-let state = require('./state.js')
+let GoTo = require('./GoTo.js')
 
 module.exports = {
-  state: state,
+  GoTo: GoTo,
 };

@@ -1,23 +1,38 @@
 #include "ros/ros.h"
-#include "assignment_1/state.h"
+#include "assignment_1/GoTo.h"
+#include  "geometry_msgs/Pose2D.h"
 
-bool add(assignment_1::state::Request  &req,
-         assignment_1::state::Response &res)
-{
-  res.sum = req.a + req.b;
-  ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
-  ROS_INFO("sending back response: [%ld]", (long int)res.sum);
-  return true;
-}
+int main (int argc, char **argv){
 
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "pos_generator");
-  ros::NodeHandle n;
+	int x = rand() % 15;
+	int y = rand() % 15;
+	ros::init(argc,argv,"pos_generator"); //node initialization
+	ros::Publisher pub;
+	ros::NodeHandle nh;
 
-  ros::ServiceServer service = n.advertiseService("state", add);
-  ROS_INFO("ready to receive state");
-  ros::spin();
+	pub = nh.advertise<geometry_msgs::Pose2D>("Position",1000); //Publicher and topi init
 
-  return 0;
+	ros::Rate loop_rate(3); //it'll be random in the simulation ohase
+	int count = 0;
+//count ohw many msgs sent, to create a unique string for each msg.
+	while(ros::ok())
+	{
+		
+		geometry_msgs::Pose2D pos;
+		pos.x = x;
+		pos.y = y;
+
+		ROS_INFO("The (x,y) position is : (%d,%d)",x,y);
+
+		pub.publish(pos);
+
+		ros::spinOnce();
+
+		loop_rate.sleep();
+		x = rand() % 15;
+    		y = rand() % 15;
+		
+	}
+	
+	return 0;
 }

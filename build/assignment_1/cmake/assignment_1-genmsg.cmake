@@ -17,9 +17,9 @@ add_custom_target(assignment_1_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_custom_target(_assignment_1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" ""
 )
 
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
@@ -42,7 +42,7 @@ _generate_msg_cpp(assignment_1
 
 ### Generating Services
 _generate_srv_cpp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment_1
@@ -60,7 +60,7 @@ add_custom_target(assignment_1_generate_messages_cpp
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_cpp _assignment_1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_cpp _assignment_1_generate_messages_check_deps_${_filename})
@@ -83,7 +83,7 @@ _generate_msg_eus(assignment_1
 
 ### Generating Services
 _generate_srv_eus(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment_1
@@ -101,7 +101,7 @@ add_custom_target(assignment_1_generate_messages_eus
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_eus _assignment_1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_eus _assignment_1_generate_messages_check_deps_${_filename})
@@ -124,7 +124,7 @@ _generate_msg_lisp(assignment_1
 
 ### Generating Services
 _generate_srv_lisp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment_1
@@ -142,7 +142,7 @@ add_custom_target(assignment_1_generate_messages_lisp
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_lisp _assignment_1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_lisp _assignment_1_generate_messages_check_deps_${_filename})
@@ -165,7 +165,7 @@ _generate_msg_nodejs(assignment_1
 
 ### Generating Services
 _generate_srv_nodejs(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment_1
@@ -183,7 +183,7 @@ add_custom_target(assignment_1_generate_messages_nodejs
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_nodejs _assignment_1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_nodejs _assignment_1_generate_messages_check_deps_${_filename})
@@ -206,7 +206,7 @@ _generate_msg_py(assignment_1
 
 ### Generating Services
 _generate_srv_py(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment_1
@@ -224,7 +224,7 @@ add_custom_target(assignment_1_generate_messages_py
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_py _assignment_1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_py _assignment_1_generate_messages_check_deps_${_filename})

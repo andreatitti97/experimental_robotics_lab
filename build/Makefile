@@ -387,6 +387,19 @@ assignment_1_generate_messages_eus/fast:
 .PHONY : assignment_1_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named assignment_1_gencpp
 
 # Build rule for target.
@@ -634,6 +647,32 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named navigation_server
+
+# Build rule for target.
+navigation_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 navigation_server
+.PHONY : navigation_server
+
+# fast build rule for target.
+navigation_server/fast:
+	$(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/build
+.PHONY : navigation_server/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_1_generate_messages_check_deps_GoTo
+
+# Build rule for target.
+_assignment_1_generate_messages_check_deps_GoTo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_1_generate_messages_check_deps_GoTo
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo
+
+# fast build rule for target.
+_assignment_1_generate_messages_check_deps_GoTo/fast:
+	$(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -711,32 +750,6 @@ assignment_1_generate_messages/fast:
 	$(MAKE) -f assignment_1/CMakeFiles/assignment_1_generate_messages.dir/build.make assignment_1/CMakeFiles/assignment_1_generate_messages.dir/build
 .PHONY : assignment_1_generate_messages/fast
 
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_py
-
-# Build rule for target.
-geometry_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named _assignment_1_generate_messages_check_deps_state
-
-# Build rule for target.
-_assignment_1_generate_messages_check_deps_state: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _assignment_1_generate_messages_check_deps_state
-.PHONY : _assignment_1_generate_messages_check_deps_state
-
-# fast build rule for target.
-_assignment_1_generate_messages_check_deps_state/fast:
-	$(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_state.dir/build
-.PHONY : _assignment_1_generate_messages_check_deps_state/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -767,6 +780,7 @@ help:
 	@echo "... assignment_1_generate_messages_nodejs"
 	@echo "... assignment_1_generate_messages_lisp"
 	@echo "... assignment_1_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... assignment_1_gencpp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... assignment_1_genlisp"
@@ -786,14 +800,14 @@ help:
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... navigation_server"
+	@echo "... _assignment_1_generate_messages_check_deps_GoTo"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... assignment_1_generate_messages"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... _assignment_1_generate_messages_check_deps_state"
 .PHONY : help
 
 

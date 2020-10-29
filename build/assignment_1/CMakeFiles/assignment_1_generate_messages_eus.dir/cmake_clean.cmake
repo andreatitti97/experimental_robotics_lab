@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment_1_generate_messages_eus"
   "/home/andrea/catkin_ws/devel/share/roseus/ros/assignment_1/msg/user_cmd.l"
-  "/home/andrea/catkin_ws/devel/share/roseus/ros/assignment_1/srv/state.l"
+  "/home/andrea/catkin_ws/devel/share/roseus/ros/assignment_1/srv/GoTo.l"
   "/home/andrea/catkin_ws/devel/share/roseus/ros/assignment_1/manifest.l"
 )
 

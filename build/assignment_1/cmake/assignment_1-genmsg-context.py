@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
-services_str = "/home/andrea/catkin_ws/src/assignment_1/srv/state.srv"
+services_str = "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
 pkg_name = "assignment_1"
 dependencies_str = "std_msgs;geometry_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
