@@ -14,40 +14,27 @@ from geometry_msgs.msg import Twist
 
 from assignment_1.srv import *
 
-X = 0
-Y = 0
+x = 3
+y = 5
 homeX = 10
 homeY = 20
+state = "NoInfo"
 
-# 
 def decision():
     return random.choice(['goToNormal','goToSleep'])
 
-# callback for the get position subsriber
-def callbackPos(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.linear.x, data.linear.y)
-    global X
-    X = data.linear.x
-    global Y 
-    Y = data.linear.y    
+def callbackSta(data): 
+    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+    global state 
+    state = "play"
 
-# client function
-def navigation(x,y):
 
-    rospy.wait_for_service('myNavigation')
-    try:
-        go_to = rospy.ServiceProxy('myNavigation',GoTo)
-        check = go_to(x ,y)
-        return check.o
-    except rospy.ServiceException as e:
-        print("Service call failed: %s"%e)
-
-# define state NORMAL
+# define state Unlocked
 class Normal(smach.State):
     def __init__(self):
         # initialisation function, it should not wait
         smach.State.__init__(self, 
-                             outcomes=['goToNormal','goToSleep'],
+                             outcomes=['goToNormal','goToSleep','goToPlay'],
                              input_keys=['unlocked_counter_in'],
                              output_keys=['unlocked_counter_out'])
         self.rate = rospy.Rate(1)  # Loop at 200 Hz
@@ -55,46 +42,72 @@ class Normal(smach.State):
         
     def execute(self,userdata):
         # function called when exiting from the node, it can be blacking
-        time.sleep(3)
-        global X
-        global Y
+        global x
+        global y
+        global state
         
-        self.counter = random.randint(1,2)
+        self.counter = 0
         while not rospy.is_shutdown():  
             rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
-            
-            if self.counter == 4:
+#       userdata.unlocked_counter_out = userdata.unlocked_counter_in + 1
+            time.sleep(2)
+            if self.counter == 3:
                 return 'goToSleep'
-            time.sleep(3)
-            navigation(X,Y)
-#            rospy.loginfo(rospy.get_caller_id() + 'i m going to x: %d y: %d',x, y)
+            self.rate.sleep()
+#            navigation(x,y)
+            rospy.loginfo(rospy.get_caller_id() + 'i m going to x: %d y: %d',x, y)
+            x = x + 1
+            y = y + 1
+            if state == "play":
+                state = 'noInput'
+                return 'goToPlay'
 
             self.counter += 1
             
-
-        return 'goToSleep' 
         
+        return decision()
     
 
-# define state SLEEP 
+# define state Locked
 class Sleep(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
                              outcomes=['goToNormal','goToSleep'],
                              input_keys=['locked_counter_in'],
                              output_keys=['locked_counter_out'])
+        self.sensor_input = 0
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
-
-        time.sleep(random.randint(3,5))
-        
+        # simulate that we have to get 5 data samples to compute the outcome
+        time.sleep(5)
+        #            navigation(x,y)
         global homeX
         global homeY
         rospy.loginfo(rospy.get_caller_id() + 'Executing state SLEEP ')
-        navigation(homeX,homeY)
-#        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',homeX,homeY)
+        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',homeX,homeY)
         self.rate.sleep()
+        return 'goToNormal'
+
+# define state Play
+class Play(smach.State):
+    def __init__(self):
+        smach.State.__init__(self, 
+                             outcomes=['goToNormal','goToPlay'],
+                             input_keys=['locked_counter_in'],
+                             output_keys=['locked_counter_out'])
+        
+        self.sensor_input = 0
+        self.rate = rospy.Rate(200)  # Loop at 200 Hz
+
+    def execute(self, userdata):
+        # simulate that we have to get 5 data samples to compute the outcome
+        time.sleep(3)
+        #            navigation(x,y)
+
+        rospy.loginfo(rospy.get_caller_id() + 'Executing state PLAY ')
+        
+
         return 'goToNormal'
 
 
@@ -102,8 +115,7 @@ class Sleep(smach.State):
 def main():
     rospy.init_node('smach_example_state_machine')
 
-    rospy.Subscriber("Position", Twist, callbackPos) # subsriber get_position 
-
+    rospy.Subscriber("cmd_string", String, callbackSta)
     # Create a SMACH state machine
     sm = smach.StateMachine(outcomes=['container_interface'])
     sm.userdata.sm_counter = 0
@@ -113,12 +125,18 @@ def main():
         # Add states to the container
         smach.StateMachine.add('NORMAL', Normal(), 
                                transitions={'goToSleep':'SLEEP', 
+                                            'goToPlay':'PLAY',
                                             'goToNormal':'NORMAL'},
                                remapping={'locked_counter_in':'sm_counter', 
                                           'locked_counter_out':'sm_counter'})
         smach.StateMachine.add('SLEEP', Sleep(), 
                                transitions={'goToSleep':'SLEEP', 
                                             'goToNormal':'NORMAL'},
+                               remapping={'unlocked_counter_in':'sm_counter',
+                                          'unlocked_counter_out':'sm_counter'})
+        smach.StateMachine.add('PLAY', Play(), 
+                               transitions={'goToNormal':'NORMAL',
+                                            'goToPlay':'PLAY'},
                                remapping={'unlocked_counter_in':'sm_counter',
                                           'unlocked_counter_out':'sm_counter'})
 
@@ -137,4 +155,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    

@@ -18,12 +18,12 @@ int y = rand() % 15;
 //int time = rand() % 5000 + 1000;
 
 
-ros::init(argc,argv,"getPosition"); //node init
+ros::init(argc,argv,"position_generator"); //node init
 
 ros::Publisher pub;
 ros::NodeHandle nh;
 
-pub = nh.advertise<geometry_msgs::Twist>("Position", 1000); //pub and topic init 
+pub = nh.advertise<geometry_msgs::Twist>("position", 1000); //pub and topic init 
 
 ros::Rate loop_rate(1); // that I m going to make it randomly in the simulation phase 
 
