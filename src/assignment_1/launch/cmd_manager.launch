@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+<node pkg="assignment_1" type="cmd_manager.py" name="cmd_manager" output="screen"> </node>
+<node pkg="assignment_1" type="navigation_server" name="navigation_server" output="screen"> </node>
+<node pkg="assignment_1" type="user_cmd" name="user_cmd" output="screen"> </node>
+<node pkg="assignment_1" type="pos_generator" name="position_generator" output="screen"> </node>
+
+</launch>

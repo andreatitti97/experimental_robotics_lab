@@ -114,7 +114,7 @@ class Play(smach.State):
 
         
 def main():
-    rospy.init_node('smach_example_state_machine')
+    rospy.init_node('cmd_manager')
 
     rospy.Subscriber("cmd_string", String, callbackSta)
     # Create a SMACH state machine

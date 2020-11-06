@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+<node pkg="assignment_1" type="pos_generator" name="position_generator" output="screen">
+</node>
+</launch>
