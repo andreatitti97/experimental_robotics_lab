@@ -14,26 +14,47 @@ from geometry_msgs.msg import Twist
 
 from assignment_1.srv import *
 
-# Initialize useful global variables
-x = 3
-y = 5
-xhome = 10
-yhome = 20
+X = 0  
+Y = 0
+homeX = 11
+homeY = 11
 state = "NoInfo"
-
-def decision(): #the decision for normal of sleep should be random
+# 
+def decision():
     return random.choice(['goToNormal','goToSleep'])
-	
-def callbackSta(data): #callback function for subscribe user_cmd node.
+
+# callback for the get position subsriber
+def callbackPos(data):
+    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.linear.x, data.linear.y)
+    global X
+    X = data.linear.x
+    global Y 
+    Y = data.linear.y    
+
+# callback for the speckPerception subsriber 
+def callbackSta(data): 
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
     global state 
     state = "play"
 
+# client function for navigation service 
+def navigation(x,y):
+
+    rospy.wait_for_service('navigation')
+    try:
+        go_to = rospy.ServiceProxy('navigation',GoTo)
+        check = go_to(x ,y)
+        if check.o == 0:
+             rospy.loginfo(rospy.get_caller_id() + "The robot is arrived")
+
+        return check.o
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
 
 # define state NORMAL
 class Normal(smach.State):
     def __init__(self):
-        # Initialization function
+        # initialisation function, it should not wait
         smach.State.__init__(self, 
                              outcomes=['goToNormal','goToSleep','goToPlay'],
                              input_keys=['unlocked_counter_in'],
@@ -42,51 +63,45 @@ class Normal(smach.State):
         self.counter = 0
         
     def execute(self,userdata):
-        
-        global x
-        global y
+
+        global X
+        global Y
         global state
         
-        self.counter = 0
+        self.counter = random.randint(1,2) # it determins how many movements should do the robot in NORMAL mode
         while not rospy.is_shutdown():  
             rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
-
-            time.sleep(2)
-            if self.counter == 3:
-                return 'goToSleep'
-            self.rate.sleep()
-
-            rospy.loginfo(rospy.get_caller_id() + 'i m going to x: %d y: %d',x, y)
-            x = x + 1
-            y = y + 1
+            time.sleep(1)
             if state == "play":
                 state = 'noInput'
                 return 'goToPlay'
+            if self.counter == 4:
+                return 'goToSleep'           
+            navigation(X,Y) # request for the service to move in X and Y position
 
             self.counter += 1
             
+        return 'goToSleep' 
         
-        return decision()
     
 
-# Define the state SLEEP
+# define state SLEEP 
 class Sleep(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
                              outcomes=['goToNormal','goToSleep'],
                              input_keys=['locked_counter_in'],
                              output_keys=['locked_counter_out'])
-        self.sensor_input = 0
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
+
+        time.sleep(random.randint(1,4))
         
-        time.sleep(5)
-       
-        global xhome
-        global yhome
+        global homeX
+        global homeY
         rospy.loginfo(rospy.get_caller_id() + 'Executing state SLEEP ')
-        rospy.loginfo(rospy.get_caller_id() + 'i m going to home x: %d y: %d',xhome,yhome)
+        navigation(homeX,homeY) # move in home position 
         self.rate.sleep()
         return 'goToNormal'
 
@@ -102,21 +117,26 @@ class Play(smach.State):
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
-        
-        time.sleep(3)
-        
+        # simulate that we have to get 5 data samples to compute the outcome
+        global X
+        global Y 
+
+        navigation(X,Y)
+
 
         rospy.loginfo(rospy.get_caller_id() + 'Executing state PLAY ')
-        
+        time.sleep(3)
 
-        return 'goToNormal'
+        return 'goToNormal'       
 
 
         
 def main():
     rospy.init_node('cmd_manager')
 
-    rospy.Subscriber("cmd_string", String, callbackSta)
+    rospy.Subscriber("position", Twist, callbackPos) # subsriber get_position 
+    rospy.Subscriber("user_cmd", String, callbackSta)
+
     # Create a SMACH state machine
     sm = smach.StateMachine(outcomes=['container_interface'])
     sm.userdata.sm_counter = 0
