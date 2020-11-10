@@ -286,36 +286,6 @@ assignment_1_generate_messages_eus/fast:
 .PHONY : assignment_1_generate_messages_eus/fast
 
 # Convenience name for target.
-assignment_1/CMakeFiles/navigation_server.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/navigation_server.dir/rule
-.PHONY : assignment_1/CMakeFiles/navigation_server.dir/rule
-
-# Convenience name for target.
-navigation_server: assignment_1/CMakeFiles/navigation_server.dir/rule
-
-.PHONY : navigation_server
-
-# fast build rule for target.
-navigation_server/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/build
-.PHONY : navigation_server/fast
-
-# Convenience name for target.
-assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
-.PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
-
-# Convenience name for target.
-_assignment_1_generate_messages_check_deps_GoTo: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
-
-.PHONY : _assignment_1_generate_messages_check_deps_GoTo
-
-# fast build rule for target.
-_assignment_1_generate_messages_check_deps_GoTo/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build
-.PHONY : _assignment_1_generate_messages_check_deps_GoTo/fast
-
-# Convenience name for target.
 assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : assignment_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -434,6 +404,51 @@ std_msgs_generate_messages_py: assignment_1/CMakeFiles/std_msgs_generate_message
 std_msgs_generate_messages_py/fast:
 	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/std_msgs_generate_messages_py.dir/build.make assignment_1/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
+.PHONY : assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+assignment_1_generate_messages_cpp: assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
+
+.PHONY : assignment_1_generate_messages_cpp
+
+# fast build rule for target.
+assignment_1_generate_messages_cpp/fast:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/build.make assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/build
+.PHONY : assignment_1_generate_messages_cpp/fast
+
+# Convenience name for target.
+assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 assignment_1/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -556,64 +571,34 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
-.PHONY : assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
+assignment_1/CMakeFiles/navigation_server.dir/rule:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/navigation_server.dir/rule
+.PHONY : assignment_1/CMakeFiles/navigation_server.dir/rule
 
 # Convenience name for target.
-assignment_1_generate_messages_cpp: assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/rule
+navigation_server: assignment_1/CMakeFiles/navigation_server.dir/rule
 
-.PHONY : assignment_1_generate_messages_cpp
+.PHONY : navigation_server
 
 # fast build rule for target.
-assignment_1_generate_messages_cpp/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/build.make assignment_1/CMakeFiles/assignment_1_generate_messages_cpp.dir/build
-.PHONY : assignment_1_generate_messages_cpp/fast
+navigation_server/fast:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/navigation_server.dir/build.make assignment_1/CMakeFiles/navigation_server.dir/build
+.PHONY : navigation_server/fast
 
 # Convenience name for target.
-assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
+.PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+_assignment_1_generate_messages_check_deps_GoTo: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make assignment_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make assignment_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/rule:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/rule
-.PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/rule
-
-# Convenience name for target.
-_assignment_1_generate_messages_check_deps_user_cmd: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/rule
-
-.PHONY : _assignment_1_generate_messages_check_deps_user_cmd
-
-# fast build rule for target.
-_assignment_1_generate_messages_check_deps_user_cmd/fast:
-	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/build
-.PHONY : _assignment_1_generate_messages_check_deps_user_cmd/fast
+_assignment_1_generate_messages_check_deps_GoTo/fast:
+	cd /home/andrea/experimental_robotics_lab/build && $(MAKE) -f assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build.make assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_GoTo.dir/build
+.PHONY : _assignment_1_generate_messages_check_deps_GoTo/fast
 
 # Convenience name for target.
 assignment_1/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
@@ -806,9 +791,6 @@ help:
 	@echo "... assignment_1_generate_messages_lisp"
 	@echo "... install/strip"
 	@echo "... assignment_1_generate_messages_eus"
-	@echo "... install"
-	@echo "... navigation_server"
-	@echo "... _assignment_1_generate_messages_check_deps_GoTo"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... assignment_1_gencpp"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -817,6 +799,9 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... assignment_1_geneus"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... assignment_1_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
@@ -825,10 +810,9 @@ help:
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... assignment_1_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... _assignment_1_generate_messages_check_deps_user_cmd"
+	@echo "... install"
+	@echo "... navigation_server"
+	@echo "... _assignment_1_generate_messages_check_deps_GoTo"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"

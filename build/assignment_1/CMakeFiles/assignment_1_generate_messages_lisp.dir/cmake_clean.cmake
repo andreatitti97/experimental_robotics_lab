@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment_1_generate_messages_lisp"
-  "/home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp"
   "/home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp"
 )
 

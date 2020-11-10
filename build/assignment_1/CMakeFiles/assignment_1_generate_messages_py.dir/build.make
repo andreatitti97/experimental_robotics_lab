@@ -53,36 +53,27 @@ CMAKE_BINARY_DIR = /home/andrea/experimental_robotics_lab/build
 # Include the progress variables for this target.
 include assignment_1/CMakeFiles/assignment_1_generate_messages_py.dir/progress.make
 
-assignment_1/CMakeFiles/assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py
 assignment_1/CMakeFiles/assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py
 assignment_1/CMakeFiles/assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/__init__.py
 assignment_1/CMakeFiles/assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/__init__.py
 
 
-/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py: /home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG assignment_1/user_cmd"
-	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg -Iassignment_1:/home/andrea/experimental_robotics_lab/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg
-
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py: /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV assignment_1/GoTo"
-	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv -Iassignment_1:/home/andrea/experimental_robotics_lab/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV assignment_1/GoTo"
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv
 
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/__init__.py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/__init__.py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for assignment_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for assignment_1"
 	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg --initpy
 
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/__init__.py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py
 /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/__init__.py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for assignment_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for assignment_1"
 	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv --initpy
 
 assignment_1_generate_messages_py: assignment_1/CMakeFiles/assignment_1_generate_messages_py
-assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/_user_cmd.py
 assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/_GoTo.py
 assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/msg/__init__.py
 assignment_1_generate_messages_py: /home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1/srv/__init__.py

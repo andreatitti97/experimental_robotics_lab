@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment_1_generate_messages_cpp"
-  "/home/andrea/experimental_robotics_lab/devel/include/assignment_1/user_cmd.h"
   "/home/andrea/experimental_robotics_lab/devel/include/assignment_1/GoTo.h"
 )
 

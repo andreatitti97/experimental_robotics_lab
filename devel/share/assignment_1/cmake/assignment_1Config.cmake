@@ -99,7 +99,7 @@ if(NOT "/home/andrea/experimental_robotics_lab/devel/include " STREQUAL " ")
   elseif(NOT " " STREQUAL " ")
     set(_report "Check the website '' for information and consider reporting the problem.")
   else()
-    set(_report "Report the problem to the maintainer 'andrea <andrea@todo.todo>' and request to fix the problem.")
+    set(_report "Report the problem to the maintainer 'andrea <andrea.tiranti97@gmail.com>' and request to fix the problem.")
   endif()
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/andrea/experimental_robotics_lab/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/andrea/experimental_robotics_lab/devel/lib;/home/andrea/experimental_robotics_lab/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -185,7 +185,7 @@ foreach(t ${assignment_1_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;roscpp;rospy;std_msgs;message_runtime")
+set(depends "geometry_msgs;roscpp;rospy;std_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

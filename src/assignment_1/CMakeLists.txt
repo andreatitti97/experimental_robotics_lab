@@ -49,10 +49,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-FILES
-user_cmd.msg
-)
+#add_message_files(
+#FILES
+#user_cmd.msg
+#)
 
 ## Generate services in the 'srv' folder
 add_service_files(
@@ -106,8 +106,7 @@ geometry_msgs
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES assignment_1
-  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs message_runtime
-#  DEPENDS system_lib
+  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs
 )
 
 ###########
@@ -123,15 +122,15 @@ include_directories(
 
 add_executable(user_cmd src/user_cmd.cpp)
 target_link_libraries(user_cmd ${catkin_LIBRARIES})
-add_dependencies(user_cmd assignment_1_generate_messages_cpp)
+#add_dependencies(user_cmd assignment_1_generate_messages_cpp)
 
 add_executable(navigation_server src/navigation_server.cpp)
 target_link_libraries(navigation_server ${catkin_LIBRARIES})
-add_dependencies(navigation_server assignment_1_gencpp)
+#add_dependencies(navigation_server assignment_1_gencpp)
 
 add_executable(pos_generator src/pos_generator.cpp)
 target_link_libraries(pos_generator ${catkin_LIBRARIES})
-add_dependencies(pos_generator assignment_1_generate_messages_cpp)
+#add_dependencies(pos_generator assignment_1_generate_messages_cpp)
 
 #add_executable(cmd_manager src/cmd_manager.py)
 #target_link_libraries(cmd_manager ${catkin_LIBRARIES})

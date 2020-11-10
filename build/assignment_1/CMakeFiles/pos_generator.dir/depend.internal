@@ -3,8 +3,7 @@
 
 assignment_1/CMakeFiles/pos_generator.dir/src/pos_generator.cpp.o
  /home/andrea/experimental_robotics_lab/src/assignment_1/src/pos_generator.cpp
- /opt/ros/kinetic/include/geometry_msgs/Twist.h
- /opt/ros/kinetic/include/geometry_msgs/Vector3.h
+ /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h

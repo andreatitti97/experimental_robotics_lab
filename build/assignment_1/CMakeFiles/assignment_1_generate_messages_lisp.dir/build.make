@@ -53,22 +53,15 @@ CMAKE_BINARY_DIR = /home/andrea/experimental_robotics_lab/build
 # Include the progress variables for this target.
 include assignment_1/CMakeFiles/assignment_1_generate_messages_lisp.dir/progress.make
 
-assignment_1/CMakeFiles/assignment_1_generate_messages_lisp: /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp
 assignment_1/CMakeFiles/assignment_1_generate_messages_lisp: /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp
 
 
-/home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp: /home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from assignment_1/user_cmd.msg"
-	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg -Iassignment_1:/home/andrea/experimental_robotics_lab/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg
-
 /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp: /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from assignment_1/GoTo.srv"
-	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv -Iassignment_1:/home/andrea/experimental_robotics_lab/src/assignment_1/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from assignment_1/GoTo.srv"
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p assignment_1 -o /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv
 
 assignment_1_generate_messages_lisp: assignment_1/CMakeFiles/assignment_1_generate_messages_lisp
-assignment_1_generate_messages_lisp: /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/msg/user_cmd.lisp
 assignment_1_generate_messages_lisp: /home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1/srv/GoTo.lisp
 assignment_1_generate_messages_lisp: assignment_1/CMakeFiles/assignment_1_generate_messages_lisp.dir/build.make
 

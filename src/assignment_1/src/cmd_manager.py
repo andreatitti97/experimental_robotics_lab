@@ -24,39 +24,38 @@ from geometry_msgs.msg import Pose2D
 from assignment_1.srv import *
 
 ## robot X position variable
-# @param X initial X pos of the robot
+# @param X is the initialize X position of the robot
 X = 0  
 ## robot Y position variable
-# @param Y initial Y pos of the robot
+# @param Y is the initialize Y position of the robot 
 Y = 0
-## home X position
-# @param homeX inital X pos of the house
+## X position of the home 
+# @param homeX here you can set the a priori X position of the house
 homeX = 10
-## home Y position
-# @param homeY inital Y pos of the house
+## Y position of the home 
+# @param homeY here you can set the a priori Y position of the house
 homeY = 20
 ## State variable
-# @param state variable that save the PLAY state coming from the user, if sended.
+# @param state This is the state coming from State node (that's why is a string) and it can be ether play or NoInfo 
 state = "NoInfo"
 
 personX = 2
 personY = 3
 
-## Function that randomize the choice for choosing states NORMAL and SLEEP 
 def decision():
     return random.choice(['goToNormal','goToSleep'])
 
-## Callback for 'position' subscriber
+## callback for the get position subsriber
 def callbackPos(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.x, data.y)
+#    rospy.loginfo(rospy.get_caller_id() + " I heard x: %d  y: %d", data.x, data.y)
     global X
     X = data.x
     global Y 
     Y = data.y    
 
-## Callback for 'user_cmd' subscriber 
+## callback for the speckPerception subsriber 
 def callbackSta(data): 
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+    rospy.loginfo(rospy.get_caller_id() + " I heard %s", data.data)
     global state 
     state = "play"
 
@@ -73,19 +72,19 @@ def navigation(x,y):
         check = go_to(x ,y)
         if check.ok == True:
             if (check.currentX ==homeX) & (check.currentY ==homeY):
-                rospy.loginfo(rospy.get_caller_id() + "The robot is arrived at home" )
+                rospy.loginfo(rospy.get_caller_id() + " The robot is arrived at home" )
             elif (check.currentX == personX) & (check.currentY == personY):
-                rospy.loginfo(rospy.get_caller_id() + "The robot is come back" )
+                rospy.loginfo(rospy.get_caller_id() + " The robot is returned to the user" )
             else:
-                rospy.loginfo(rospy.get_caller_id() + "The robot is arrived in position x: %d , y: %d", check.currentX, check.currentY )
+                rospy.loginfo(rospy.get_caller_id() + " The robot is arrived in position x: %d , y: %d", check.currentX, check.currentY )
              
         else: 
-            rospy.loginfo(rospy.get_caller_id() + "The robot cannot reach that posiion")
+            rospy.loginfo(rospy.get_caller_id() + " The robot cannot reach that posiion")
         return check.ok
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
 
-## Define state NORMAL
+## defines the NORMAL state
 class Normal(smach.State):
     def __init__(self):
         # initialisation function, it should not wait
@@ -104,7 +103,7 @@ class Normal(smach.State):
         
         self.counter = random.randint(1,2) # it determins how many movements should do the robot in NORMAL mode
         while not rospy.is_shutdown():  
-            rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
+ #           rospy.loginfo(rospy.get_caller_id() + 'Executing state NORMAL ')
             time.sleep(1)
             if state == "play":
                 state = 'noInput'
@@ -119,7 +118,7 @@ class Normal(smach.State):
         
     
 
-## Define state SLEEP 
+## defines the SLEEP state 
 class Sleep(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
@@ -134,12 +133,12 @@ class Sleep(smach.State):
         
         global homeX
         global homeY
-        rospy.loginfo(rospy.get_caller_id() + 'Executing state SLEEP ')
+ #       rospy.loginfo(rospy.get_caller_id() + ' Executing state SLEEP ')
         navigation(homeX,homeY) # move in home position 
         self.rate.sleep()
         return 'goToNormal'
 
-## Define state PLAY
+## defines the PLAY state
 class Play(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
@@ -147,7 +146,6 @@ class Play(smach.State):
                              input_keys=['locked_counter_in'],
                              output_keys=['locked_counter_out'])
         
-        self.sensor_input = 0
         self.rate = rospy.Rate(200)  # Loop at 200 Hz
 
     def execute(self, userdata):
@@ -159,18 +157,18 @@ class Play(smach.State):
         navigation(personX,personY)
 
 
-        rospy.loginfo(rospy.get_caller_id() + 'Executing state PLAY ')
+ #       rospy.loginfo(rospy.get_caller_id() + ' Executing state PLAY ')
         time.sleep(3)
 
         return 'goToNormal'       
 
 
-## Main function
+        
 def main():
     rospy.init_node('cmd_manager')
 
     rospy.Subscriber("position", Pose2D, callbackPos) # subsriber get_position 
-    rospy.Subscriber("user_cmd", String, callbackSta)
+    rospy.Subscriber("cmd_string", String, callbackSta)
 
     # Create a SMACH state machine
     sm = smach.StateMachine(outcomes=['container_interface'])

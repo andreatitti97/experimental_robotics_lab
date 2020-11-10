@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/andrea/experimental_robotics_lab/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/andrea/experimental_robotics_lab/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/andrea/experimental_robotics_lab/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/andrea/experimental_robotics_lab/src:$ROS_PACKAGE_PATH"

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment_1_generate_messages_nodejs"
-  "/home/andrea/experimental_robotics_lab/devel/share/gennodejs/ros/assignment_1/msg/user_cmd.js"
   "/home/andrea/experimental_robotics_lab/devel/share/gennodejs/ros/assignment_1/srv/GoTo.js"
 )
 
