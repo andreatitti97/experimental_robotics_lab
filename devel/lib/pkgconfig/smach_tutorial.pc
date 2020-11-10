@@ -1,8 +1,0 @@
-prefix=/home/andrea/catkin_ws/devel
-
-Name: smach_tutorial
-Description: Description of smach_tutorial
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

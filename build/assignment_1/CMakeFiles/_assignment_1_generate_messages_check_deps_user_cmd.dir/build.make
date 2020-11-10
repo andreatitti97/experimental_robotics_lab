@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/andrea/experimental_robotics_lab/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/catkin_ws/build
+CMAKE_BINARY_DIR = /home/andrea/experimental_robotics_lab/build
 
 # Utility rule file for _assignment_1_generate_messages_check_deps_user_cmd.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/andrea/catkin_ws/build
 include assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/progress.make
 
 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd:
-	cd /home/andrea/catkin_ws/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py assignment_1 /home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg 
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py assignment_1 /home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg 
 
 _assignment_1_generate_messages_check_deps_user_cmd: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd
 _assignment_1_generate_messages_check_deps_user_cmd: assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/build.make
@@ -67,10 +67,10 @@ assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/
 .PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/build
 
 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/clean:
-	cd /home/andrea/catkin_ws/build/assignment_1 && $(CMAKE_COMMAND) -P CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/cmake_clean.cmake
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && $(CMAKE_COMMAND) -P CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/cmake_clean.cmake
 .PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/clean
 
 assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/depend:
-	cd /home/andrea/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/catkin_ws/src /home/andrea/catkin_ws/src/assignment_1 /home/andrea/catkin_ws/build /home/andrea/catkin_ws/build/assignment_1 /home/andrea/catkin_ws/build/assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrea/experimental_robotics_lab/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/experimental_robotics_lab/src /home/andrea/experimental_robotics_lab/src/assignment_1 /home/andrea/experimental_robotics_lab/build /home/andrea/experimental_robotics_lab/build/assignment_1 /home/andrea/experimental_robotics_lab/build/assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : assignment_1/CMakeFiles/_assignment_1_generate_messages_check_deps_user_cmd.dir/depend
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/andrea/catkin_ws/src/assignment_1
+# Install script for directory: /home/andrea/experimental_robotics_lab/src/assignment_1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/andrea/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/andrea/experimental_robotics_lab/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,61 +33,61 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/msg" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/msg" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/srv" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/srv" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/cmake" TYPE FILE FILES "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/assignment_1-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/cmake" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/assignment_1-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/andrea/catkin_ws/devel/include/assignment_1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/andrea/experimental_robotics_lab/devel/include/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/andrea/catkin_ws/devel/share/roseus/ros/assignment_1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/andrea/experimental_robotics_lab/devel/share/roseus/ros/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/andrea/catkin_ws/devel/share/common-lisp/ros/assignment_1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/andrea/experimental_robotics_lab/devel/share/common-lisp/ros/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/andrea/catkin_ws/devel/share/gennodejs/ros/assignment_1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/andrea/experimental_robotics_lab/devel/share/gennodejs/ros/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/andrea/catkin_ws/devel/lib/python2.7/dist-packages/assignment_1")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/andrea/catkin_ws/devel/lib/python2.7/dist-packages/assignment_1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/andrea/experimental_robotics_lab/devel/lib/python2.7/dist-packages/assignment_1")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/assignment_1.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/assignment_1.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/cmake" TYPE FILE FILES "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/assignment_1-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/cmake" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/assignment_1-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1/cmake" TYPE FILE FILES
-    "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/assignment_1Config.cmake"
-    "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/assignment_1Config-version.cmake"
+    "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/assignment_1Config.cmake"
+    "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/assignment_1Config-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1" TYPE FILE FILES "/home/andrea/catkin_ws/src/assignment_1/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1" TYPE FILE FILES "/home/andrea/experimental_robotics_lab/src/assignment_1/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1" TYPE PROGRAM FILES "/home/andrea/catkin_ws/build/assignment_1/catkin_generated/installspace/cmd_manager.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1" TYPE PROGRAM FILES "/home/andrea/experimental_robotics_lab/build/assignment_1/catkin_generated/installspace/cmd_manager.py")
 endif()
 

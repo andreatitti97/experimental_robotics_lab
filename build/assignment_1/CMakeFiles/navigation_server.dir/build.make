@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrea/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/andrea/experimental_robotics_lab/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrea/catkin_ws/build
+CMAKE_BINARY_DIR = /home/andrea/experimental_robotics_lab/build
 
 # Include any dependencies generated for this target.
 include assignment_1/CMakeFiles/navigation_server.dir/depend.make
@@ -58,17 +58,17 @@ include assignment_1/CMakeFiles/navigation_server.dir/progress.make
 include assignment_1/CMakeFiles/navigation_server.dir/flags.make
 
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: assignment_1/CMakeFiles/navigation_server.dir/flags.make
-assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrea/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o"
-	cd /home/andrea/catkin_ws/build/assignment_1 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o -c /home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp
+assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o: /home/andrea/experimental_robotics_lab/src/assignment_1/src/navigation_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o"
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o -c /home/andrea/experimental_robotics_lab/src/assignment_1/src/navigation_server.cpp
 
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/navigation_server.dir/src/navigation_server.cpp.i"
-	cd /home/andrea/catkin_ws/build/assignment_1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp > CMakeFiles/navigation_server.dir/src/navigation_server.cpp.i
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrea/experimental_robotics_lab/src/assignment_1/src/navigation_server.cpp > CMakeFiles/navigation_server.dir/src/navigation_server.cpp.i
 
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/navigation_server.dir/src/navigation_server.cpp.s"
-	cd /home/andrea/catkin_ws/build/assignment_1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp -o CMakeFiles/navigation_server.dir/src/navigation_server.cpp.s
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrea/experimental_robotics_lab/src/assignment_1/src/navigation_server.cpp -o CMakeFiles/navigation_server.dir/src/navigation_server.cpp.s
 
 assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o.requires:
 
@@ -88,33 +88,33 @@ navigation_server_OBJECTS = \
 # External object files for target navigation_server
 navigation_server_EXTERNAL_OBJECTS =
 
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/build.make
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libroscpp.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librostime.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libcpp_common.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrea/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server"
-	cd /home/andrea/catkin_ws/build/assignment_1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/navigation_server.dir/link.txt --verbose=$(VERBOSE)
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/build.make
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libroscpp.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/librostime.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /opt/ros/kinetic/lib/libcpp_common.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server: assignment_1/CMakeFiles/navigation_server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrea/experimental_robotics_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server"
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/navigation_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-assignment_1/CMakeFiles/navigation_server.dir/build: /home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server
+assignment_1/CMakeFiles/navigation_server.dir/build: /home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server
 
 .PHONY : assignment_1/CMakeFiles/navigation_server.dir/build
 
@@ -123,10 +123,10 @@ assignment_1/CMakeFiles/navigation_server.dir/requires: assignment_1/CMakeFiles/
 .PHONY : assignment_1/CMakeFiles/navigation_server.dir/requires
 
 assignment_1/CMakeFiles/navigation_server.dir/clean:
-	cd /home/andrea/catkin_ws/build/assignment_1 && $(CMAKE_COMMAND) -P CMakeFiles/navigation_server.dir/cmake_clean.cmake
+	cd /home/andrea/experimental_robotics_lab/build/assignment_1 && $(CMAKE_COMMAND) -P CMakeFiles/navigation_server.dir/cmake_clean.cmake
 .PHONY : assignment_1/CMakeFiles/navigation_server.dir/clean
 
 assignment_1/CMakeFiles/navigation_server.dir/depend:
-	cd /home/andrea/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/catkin_ws/src /home/andrea/catkin_ws/src/assignment_1 /home/andrea/catkin_ws/build /home/andrea/catkin_ws/build/assignment_1 /home/andrea/catkin_ws/build/assignment_1/CMakeFiles/navigation_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrea/experimental_robotics_lab/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrea/experimental_robotics_lab/src /home/andrea/experimental_robotics_lab/src/assignment_1 /home/andrea/experimental_robotics_lab/build /home/andrea/experimental_robotics_lab/build/assignment_1 /home/andrea/experimental_robotics_lab/build/assignment_1/CMakeFiles/navigation_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : assignment_1/CMakeFiles/navigation_server.dir/depend
 

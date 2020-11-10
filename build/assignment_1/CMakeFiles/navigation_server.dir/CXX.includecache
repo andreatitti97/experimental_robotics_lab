@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/andrea/catkin_ws/devel/include/assignment_1/GoTo.h
+/home/andrea/experimental_robotics_lab/devel/include/assignment_1/GoTo.h
 ros/service_traits.h
 -
 assignment_1/GoToRequest.h
@@ -14,7 +14,7 @@ assignment_1/GoToRequest.h
 assignment_1/GoToResponse.h
 -
 
-/home/andrea/catkin_ws/devel/include/assignment_1/GoToRequest.h
+/home/andrea/experimental_robotics_lab/devel/include/assignment_1/GoToRequest.h
 string
 -
 vector
@@ -30,7 +30,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/andrea/catkin_ws/devel/include/assignment_1/GoToResponse.h
+/home/andrea/experimental_robotics_lab/devel/include/assignment_1/GoToResponse.h
 string
 -
 vector
@@ -46,11 +46,11 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/andrea/catkin_ws/src/assignment_1/src/navigation_server.cpp
+/home/andrea/experimental_robotics_lab/src/assignment_1/src/navigation_server.cpp
 ros/ros.h
-/home/andrea/catkin_ws/src/assignment_1/src/ros/ros.h
+/home/andrea/experimental_robotics_lab/src/assignment_1/src/ros/ros.h
 assignment_1/GoTo.h
-/home/andrea/catkin_ws/src/assignment_1/src/assignment_1/GoTo.h
+/home/andrea/experimental_robotics_lab/src/assignment_1/src/assignment_1/GoTo.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

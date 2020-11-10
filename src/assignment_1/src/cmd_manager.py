@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+## @package CommandManager
+#  This node include the subsription to State and GetPosition publishers,
+#  And implement a finite state machine 
+#  which manages the information coming from the two nodes and changes the state of the system in according to it.
+ 
+## Documentation for a function.
+#
+#  More details.
+
 from __future__ import print_function
 
 import roslib
@@ -10,48 +19,73 @@ import time
 import random
 import sys
 from std_msgs.msg import String
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Pose2D
 
 from assignment_1.srv import *
 
+## robot X position variable
+# @param X initial X pos of the robot
 X = 0  
+## robot Y position variable
+# @param Y initial Y pos of the robot
 Y = 0
-homeX = 11
-homeY = 11
+## home X position
+# @param homeX inital X pos of the house
+homeX = 10
+## home Y position
+# @param homeY inital Y pos of the house
+homeY = 20
+## State variable
+# @param state variable that save the PLAY state coming from the user, if sended.
 state = "NoInfo"
-# 
+
+personX = 2
+personY = 3
+
+## Function that randomize the choice for choosing states NORMAL and SLEEP 
 def decision():
     return random.choice(['goToNormal','goToSleep'])
 
-# callback for the get position subsriber
+## Callback for 'position' subscriber
 def callbackPos(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.linear.x, data.linear.y)
+    rospy.loginfo(rospy.get_caller_id() + "I heard x: %d  y: %d", data.x, data.y)
     global X
-    X = data.linear.x
+    X = data.x
     global Y 
-    Y = data.linear.y    
+    Y = data.y    
 
-# callback for the speckPerception subsriber 
+## Callback for 'user_cmd' subscriber 
 def callbackSta(data): 
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
     global state 
     state = "play"
 
-# client function for navigation service 
+## client function for navigation service 
 def navigation(x,y):
 
+    global homeX
+    global homeY
+    global personX
+    global personY
     rospy.wait_for_service('navigation')
     try:
         go_to = rospy.ServiceProxy('navigation',GoTo)
         check = go_to(x ,y)
-        if check.o == 0:
-             rospy.loginfo(rospy.get_caller_id() + "The robot is arrived")
-
-        return check.o
+        if check.ok == True:
+            if (check.currentX ==homeX) & (check.currentY ==homeY):
+                rospy.loginfo(rospy.get_caller_id() + "The robot is arrived at home" )
+            elif (check.currentX == personX) & (check.currentY == personY):
+                rospy.loginfo(rospy.get_caller_id() + "The robot is come back" )
+            else:
+                rospy.loginfo(rospy.get_caller_id() + "The robot is arrived in position x: %d , y: %d", check.currentX, check.currentY )
+             
+        else: 
+            rospy.loginfo(rospy.get_caller_id() + "The robot cannot reach that posiion")
+        return check.ok
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
 
-# define state NORMAL
+## Define state NORMAL
 class Normal(smach.State):
     def __init__(self):
         # initialisation function, it should not wait
@@ -85,7 +119,7 @@ class Normal(smach.State):
         
     
 
-# define state SLEEP 
+## Define state SLEEP 
 class Sleep(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
@@ -105,7 +139,7 @@ class Sleep(smach.State):
         self.rate.sleep()
         return 'goToNormal'
 
-# define state Play
+## Define state PLAY
 class Play(smach.State):
     def __init__(self):
         smach.State.__init__(self, 
@@ -122,6 +156,7 @@ class Play(smach.State):
         global Y 
 
         navigation(X,Y)
+        navigation(personX,personY)
 
 
         rospy.loginfo(rospy.get_caller_id() + 'Executing state PLAY ')
@@ -130,11 +165,11 @@ class Play(smach.State):
         return 'goToNormal'       
 
 
-        
+## Main function
 def main():
     rospy.init_node('cmd_manager')
 
-    rospy.Subscriber("position", Twist, callbackPos) # subsriber get_position 
+    rospy.Subscriber("position", Pose2D, callbackPos) # subsriber get_position 
     rospy.Subscriber("user_cmd", String, callbackSta)
 
     # Create a SMACH state machine

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/andrea/catkin_ws/src/assignment_1/src/pos_generator.cpp" "/home/andrea/catkin_ws/build/assignment_1/CMakeFiles/pos_generator.dir/src/pos_generator.cpp.o"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/src/pos_generator.cpp" "/home/andrea/experimental_robotics_lab/build/assignment_1/CMakeFiles/pos_generator.dir/src/pos_generator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/andrea/catkin_ws/devel/include"
+  "/home/andrea/experimental_robotics_lab/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

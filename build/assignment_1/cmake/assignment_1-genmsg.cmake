@@ -2,7 +2,7 @@
 
 message(STATUS "assignment_1: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Iassignment_1:/home/andrea/catkin_ws/src/assignment_1/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iassignment_1:/home/andrea/experimental_robotics_lab/src/assignment_1/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(assignment_1_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_custom_target(_assignment_1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" ""
 )
 
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_custom_target(_assignment_1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment_1" "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" ""
 )
 
 #
@@ -34,7 +34,7 @@ add_custom_target(_assignment_1_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment_1
@@ -42,7 +42,7 @@ _generate_msg_cpp(assignment_1
 
 ### Generating Services
 _generate_srv_cpp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment_1
@@ -60,9 +60,9 @@ add_custom_target(assignment_1_generate_messages_cpp
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_cpp _assignment_1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_cpp _assignment_1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,7 +75,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS assignment_1_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment_1
@@ -83,7 +83,7 @@ _generate_msg_eus(assignment_1
 
 ### Generating Services
 _generate_srv_eus(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment_1
@@ -101,9 +101,9 @@ add_custom_target(assignment_1_generate_messages_eus
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_eus _assignment_1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_eus _assignment_1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,7 +116,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS assignment_1_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment_1
@@ -124,7 +124,7 @@ _generate_msg_lisp(assignment_1
 
 ### Generating Services
 _generate_srv_lisp(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment_1
@@ -142,9 +142,9 @@ add_custom_target(assignment_1_generate_messages_lisp
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_lisp _assignment_1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_lisp _assignment_1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,7 +157,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS assignment_1_generate_messages_lisp
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment_1
@@ -165,7 +165,7 @@ _generate_msg_nodejs(assignment_1
 
 ### Generating Services
 _generate_srv_nodejs(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment_1
@@ -183,9 +183,9 @@ add_custom_target(assignment_1_generate_messages_nodejs
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_nodejs _assignment_1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_nodejs _assignment_1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,7 +198,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS assignment_1_generate_messages_node
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment_1
@@ -206,7 +206,7 @@ _generate_msg_py(assignment_1
 
 ### Generating Services
 _generate_srv_py(assignment_1
-  "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv"
+  "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment_1
@@ -224,9 +224,9 @@ add_custom_target(assignment_1_generate_messages_py
 add_dependencies(assignment_1_generate_messages assignment_1_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/srv/GoTo.srv" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/msg/user_cmd.msg" NAME_WE)
 add_dependencies(assignment_1_generate_messages_py _assignment_1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/andrea/catkin_ws/src/assignment_1/msg/user_cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/andrea/experimental_robotics_lab/src/assignment_1/srv/GoTo.srv" NAME_WE)
 add_dependencies(assignment_1_generate_messages_py _assignment_1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

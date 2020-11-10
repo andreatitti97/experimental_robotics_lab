@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/andrea/catkin_ws/src/assignment_1
-# Build directory: /home/andrea/catkin_ws/build/assignment_1
+# Source directory: /home/andrea/experimental_robotics_lab/src/assignment_1
+# Build directory: /home/andrea/experimental_robotics_lab/build/assignment_1
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

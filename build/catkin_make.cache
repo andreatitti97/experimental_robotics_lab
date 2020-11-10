@@ -1,2 +1,2 @@
 assignment_1
--DCATKIN_DEVEL_PREFIX=/home/andrea/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/andrea/catkin_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/andrea/experimental_robotics_lab/devel -DCMAKE_INSTALL_PREFIX=/home/andrea/experimental_robotics_lab/install -G Unix Makefiles

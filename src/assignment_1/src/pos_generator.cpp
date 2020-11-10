@@ -1,10 +1,13 @@
+/*!
+ * \author Andrea Tiranti
+ */
 #include "ros/ros.h"
-#include "geometry_msgs/Twist.h"
+#include "geometry_msgs/Pose2D.h"
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/*!
 This node publish random position in the map, for simulationg both the gesture recognition and the normal behaviour where the robot move randomly
 */
 
@@ -21,7 +24,7 @@ int main (int argc, char **argv)
 	ros::Publisher pub; //make the node publisher
 	ros::NodeHandle nh;
 
-	pub = nh.advertise<geometry_msgs::Twist>("position", 1000); //publisher and topic initialization
+	pub = nh.advertise<geometry_msgs::Pose2D>("position", 1000); //publisher and topic initialization
 
 	ros::Rate loop_rate(1); //rate for the loop
 
@@ -29,15 +32,15 @@ int main (int argc, char **argv)
 	while(ros::ok())
 	{
 
-		geometry_msgs::Twist vel; //struct were saving the posisiton to pass to the cmd_manager
+		geometry_msgs::Pose2D pose; //struct were saving the posisiton to pass to the cmd_manager
 				    
-		vel.linear.x = x ;
-		vel.linear.y = y ;
+		pose.x = x ;
+		pose.y = y ;
 
 
 		ROS_INFO("The position is x : %d and y : %d ", x,y);//print the position for the user
 
-		pub.publish(vel);//publish this position 
+		pub.publish(pose);//publish this position 
 
 		ros::spinOnce();
 

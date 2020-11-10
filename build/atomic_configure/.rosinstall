@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/andrea/catkin_ws/devel/setup.sh
+    local-name: /home/andrea/experimental_robotics_lab/devel/setup.sh

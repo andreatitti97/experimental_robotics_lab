@@ -1,4 +1,4 @@
-prefix=/home/andrea/catkin_ws/install
+prefix=/home/andrea/experimental_robotics_lab/install
 
 Name: assignment_1
 Description: Description of assignment_1

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/navigation_server.dir/src/navigation_server.cpp.o"
-  "/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server.pdb"
-  "/home/andrea/catkin_ws/devel/lib/assignment_1/navigation_server"
+  "/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server.pdb"
+  "/home/andrea/experimental_robotics_lab/devel/lib/assignment_1/navigation_server"
 )
 
 # Per-language clean rules from dependency scanning.
