@@ -1,52 +1,64 @@
 /*!
- * \author Francesco Testa
- * \version 1.0
- * \date 10-27-2020
- * \mainpage ASSIGNMENT 1
- * \section Introduction
- * This code implements a basic software architecture in according to my first assignment of the experimental robotics course.
- * If you want to learn more about code development please read the README file in the git repository
+ *\author Andrea Tiranti - S4856315
+ *\date 10/11/2020
+ *\version 1.0
+ *\mainpage Navigation Server
+ *\section intro_sec Introduction 
+ * Assignment 1 Experimental Robotics Laboratory. This software architecture simulate the behaviour of a robot that switch beetween 3 different states: NORMAL, SLEEP, PLAY.
+ *\subsection cmd_manager_sec Command Manager
+ * This node handle the Finite State Machine and the navigation of the robot, subscribe 2 topics and it is client of the server navigation
+ *\subsection navigation_server_sec Navigation Server
+ * This server simulate the navigation. The cmd_manager (client) make a request of navigation performed inside the server that 'simulate' the robot moving.
+ * INPUT: X and Y GOAL_positon.
+ *
+ * OUTPUT: Messagge of "goal reached" if possible, and the goal position.
+ *\subsection user_cmd_sec User Command
+ * This node simulate the user command (that is a voice cmd), publishing the state PLAY as a string to the cmd_manager, that when receive it should switch to PLAY mode if in NORMAL mode, if in SLEEP mode the cmd is rejected.
+ *\subsection pos_generator_sec Position Generator
+ * * This node publishes a random position which will be used from the command manager node.
+ * In practice it simulates the pointing gesture from the user and the random travel in NORMAL mode as well.
+ * \bug 
+ *  - If in SLEEP state all PLAY command rejected. 
+ *  - User posisiton fixed. 
+ *  - During action no possible to stop it.
+ 
 */
-
-/*!
- * \section Description
- * This code generates a ROS node which is also a publisher. It publishes a string 
- * 'play' on the topic SateString. 
- */
-
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <sstream>
 
-int main (int argc, char **argv){
 
-ros::init(argc,argv,"user_cmd"); 
+/*! Main function where the server is initialized*/
+int main (int argc, char **argv)
+{
 
-ros::Publisher pub;
-ros::NodeHandle nh;
+	ros::init(argc,argv,"user_cmd"); //node initialization 
 
-pub = nh.advertise<std_msgs::String>("cmd_string", 100); 
+	ros::Publisher pub;//make the node publisher
+	ros::NodeHandle nh;
 
-ros::Rate loop_rate(1); 
+	pub = nh.advertise<std_msgs::String>("cmd_string", 100);// publisher and topic initialization  
 
-int time = 15; /// initialization of the variable which will randomly choose how often to generate a 'play' message
+	ros::Rate loop_rate(1); 
 
-while(ros::ok()){
+	int time = 15; // initialization of the variable which will randomly choose how often to generate a 'play' message
 
-std_msgs::String msg; 
+	while(ros::ok()){
 
-std::stringstream ss;
+	std_msgs::String msg;// msg contain the string to pass to the cmd_manager  
 
-    msg.data = "play"; 
+	std::stringstream ss;//the string passed
 
-    ROS_INFO("state detection: %s", msg.data.c_str());
+	msg.data = "play"; 
 
-    pub.publish(msg);
+	ROS_INFO("state detection: %s", msg.data.c_str());//print the string for the use
 
-    ros::spinOnce();
+	pub.publish(msg);// publish to the cmd_manager
 
-    sleep(time);
-    time = rand() % 8 + 15; /// choose randomly the next time iteration
+	ros::spinOnce();
+
+	sleep(time);//random delay for publishing as request
+	time = rand() % 8 + 15; // choose the next time iteration (random)
 
 
 }
