@@ -1,11 +1,11 @@
-
+// pos_generator. cpp code.
 #include "ros/ros.h"
 #include "geometry_msgs/Pose2D.h"
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
 
-/*! Main function where the node is initialized as publisher*/
+/*! Main function where the node is initialized as publisher and inside the while loop is performing the publishing of the random posisitons as random 2D coordinates.*/
 int main (int argc, char **argv)
 {
 

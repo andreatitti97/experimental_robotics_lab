@@ -48,7 +48,6 @@ def decision():
 
 ## Callback for 'position' subscriber
 def callbackPos(data):
-#    rospy.loginfo(rospy.get_caller_id() + " I heard x: %d  y: %d", data.x, data.y)
     global X
     X = data.x
     global Y 
@@ -77,10 +76,10 @@ def navigation(x,y):
             elif (check.currentX == userX) & (check.currentY == userY):
                 rospy.loginfo(rospy.get_caller_id() + " Robot returned to user" )
             else:
-                rospy.loginfo(rospy.get_caller_id() + " Robot arrived position x: %d , y: %d", check.currentX, check.currentY )
+                rospy.loginfo(rospy.get_caller_id() + " Robot arrived at x: %d , y: %d", check.currentX, check.currentY )
              
         else: 
-            rospy.loginfo(rospy.get_caller_id() + " The robot cannot reach that posiion")
+            rospy.loginfo(rospy.get_caller_id() + " Impossible Position")
         return check.ok
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)

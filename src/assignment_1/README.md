@@ -55,22 +55,20 @@ However in the terminal you can see the following logs:
 - __Robot arrived position x = .. and y = ..__ 
 - __Received cmd_play__ which means that the _cmd_manager_ has recived a string _play_ from the _user_cmd_ node
 
-## System's limitation and possible improvements
-### Limitation
-As already mentioned there are some position which currently must be configured in advance such as:
-- _Home_ position: is currently set in position x = 10 and y = 20 as you can see in the _commandManager_ (__homeX__ and __homeY__ global variables)
-- _User position_: since the robot is currently not able to localize person , therefore it was necessary to give the system a known position for it and of course we assume that the person always remains in the same position.
-- _Map_:  was defined simply with two parameters indicating the maximum dimension along the x and y axes (__Xmax__ and __Ymax__ in the _Navigation_ code) which is sufficent since it is just a 2D map . No obstacles have been added since it was not required to implement an obstacle avoidance algorithm. 
 
-Regarding the _FSM_ was necessary to add some constraints which consist of : 
-When ther robot is in a SLEEP mode it cannot do anything utill the sleeptime is over. So even if the _commandManager_ recives a _play_ command from the _speackPerception_ publisher it could not go to _PLAY_ mode. Another limitation is that currently is not possible to remain in the _PLAY_ state without first returning to the NORMAL state (for istance sending a _play_ string from _speakPerception_).
+## Limitation
+- _Static useful positions_: The user and home posisitons are both defined statically, it's not possible to change them during the execution
+- _Map_:  Static Map definition, correspond to simply 2 axis with a max dimension.
+- During _SLEEP_ all 'user_cmd' PLAY from the /cmd_String topic are rejected, also the first PLAY cmd in normal mode is rejected.
+- We cannot block the system while doing an action inside a state, there are no routine to handling particular situation. (i.e. if the robot in SLEEP mode or in PLAY mode every cmd or possible action is ignored until the finish of the action):
 
-### Possible improvements:
-- Improve the _getPosition_ node with a drive which is really able to percive pointing gesture positions. And maybe move the currently random postion generator in the _commandManager_ node for maintaining the random navigation fiture. 
-- Give the possibility to the user to change the home and his/here positions. 
-- Implement a proper simulation environment. 
-- Add a more efficent and realistic navigation algorithm and/or a SLAM algo.
-- Develop drivers to actually receive sensor data also from a microphone.
+
+## Possible improvements:
+- Replace the node _pos_generator.cpp_ with more nodes for effectevely use the gesture recognition.
+- Make the robot recognize autonomosly the user posisiton. 
+- Implement a simulation environment (i.e. Gazebo) 
+- Implemente a navigation algortihm (i.e SLAM ...)
+- Implement voice recognition. 
 ## Contacts
 Andrea Tiranti e-mail: andrea.tiranti97@gmail.com
 
