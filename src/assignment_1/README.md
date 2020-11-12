@@ -29,7 +29,7 @@ For see the behaviour of the FSM use the command below in a different terminal.
 $ rosrun smach_viewer smach_viewer.py
 ```
 
-##Packges and file list
+## Packges and file list
 
  __Package__ : - assignment_1
 
@@ -39,6 +39,10 @@ $ rosrun smach_viewer smach_viewer.py
 		- user_cmd.cpp
 		- navigation_server.cpp
 		- pos_generator.cpp
+		
+## Documentation
+file:///home/andrea/experimental_robotics_lab/src/assignment_1/doc/html/index.html
+		
 ## Installation
 Install the _smach_ library which allows to implement a _Finite State Machine.
 ```
@@ -57,6 +61,8 @@ However in the terminal you can see the following logs:
 - __Going to x = .. and y = ..__ which is actually a log of the _navigation_server_  
 - __Robot arrived position x = .. and y = ..__ 
 - __Received cmd_play__ which means that the _cmd_manager_ has recived a string _play_ from the _user_cmd_ node
+- __Returning Home__ and 
+- __Going To User__ and __Robot returned to user__ when the robot is arrived.
 
 
 ## Limitation
