@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['navigation_20server',['Navigation Server',['../index.html',1,'']]]
+  ['bug_20list',['Bug List',['../bug.html',1,'']]]
 ];

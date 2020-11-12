@@ -30,8 +30,11 @@ $ rosrun smach_viewer smach_viewer.py
 ```
 
 ##Packges and file list
+
  __Package__ : - assignment_1
+
  __File List__: (/assignment_1/src)
+
 		- cmd_manager.py
 		- user_cmd.cpp
 		- navigation_server.cpp

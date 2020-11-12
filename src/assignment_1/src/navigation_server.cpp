@@ -2,14 +2,14 @@
 #include "ros/ros.h"
 #include "assignment_1/GoTo.h"
 
-#define Xmax 20 //!< X dimension of the Map 
-#define Ymax 20 //!< Y dimension of the Map  
+#define Xmax 30 //!< X dimension of the Map 
+#define Ymax 30 //!< Y dimension of the Map  
 
 #define homeX 10 //!< X coordinate of the home
-#define homeY 20 //!< Y coordinate of the home
+#define homeY 10 //!< Y coordinate of the home
 
 #define userX 2 //!< X coordinate of the user
-#define userY 3 //!< Y coordinate of the user
+#define userY 2 //!< Y coordinate of the user
 
 /*!This function print useful information fo the user interface suchs as:
  * - If the robot going home (for sleepin)

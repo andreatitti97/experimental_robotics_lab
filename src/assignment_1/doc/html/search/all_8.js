@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['navigation_20server',['Navigation Server',['../index.html',1,'']]],
-  ['navigation',['navigation',['../namespacecmd__manager.html#ad626bbddf5b8d2a85f8d25100de5f9bc',1,'cmd_manager']]],
-  ['navigation_5fserver_2ecpp',['navigation_server.cpp',['../navigation__server_8cpp.html',1,'']]],
-  ['normal',['Normal',['../classcmd__manager_1_1Normal.html',1,'cmd_manager']]]
+  ['main',['main',['../namespacecmd__manager.html#a1ac226d499cb75853ca360704e931796',1,'cmd_manager.main()'],['../navigation__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;navigation_server.cpp'],['../pos__generator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;pos_generator.cpp'],['../user__cmd_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;user_cmd.cpp']]]
 ];

@@ -10,8 +10,8 @@ int main (int argc, char **argv)
 {
 
         //generation of the random position
-        int x = rand() % 15; 
-        int y = rand() % 15; 
+        int x = rand() % 20; 
+        int y = rand() % 20; 
 
 	ros::init(argc,argv,"pos_generator");//node initialization 
 

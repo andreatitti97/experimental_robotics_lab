@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y',['Y',['../namespacecmd__manager.html#a0426ec41b2f1bd3b56e71c9d8f7b129d',1,'cmd_manager']]],
-  ['ymax',['Ymax',['../navigation__server_8cpp.html#aaf9edb39f963596bfe86fc184965dcb4',1,'navigation_server.cpp']]]
+  ['x',['X',['../namespacecmd__manager.html#ac2166ba9dda547ae8aed0aaaee1a4a9d',1,'cmd_manager']]],
+  ['xmax',['Xmax',['../navigation__server_8cpp.html#a8fd091040600c54e1b52be58d011ec30',1,'navigation_server.cpp']]]
 ];

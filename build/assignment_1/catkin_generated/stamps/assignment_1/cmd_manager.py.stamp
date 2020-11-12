@@ -34,13 +34,13 @@ Y = 0
 homeX = 10
 ## home Y position
 # @param homeY inital Y pos of the house
-homeY = 20
+homeY = 10
 ## State variable
 # @param state variable that save the PLAY state coming from the user, if sended 
-user_cmd = "NoInfo"
+user_cmd = "NoCmd"
 
 userX = 2
-userY = 3
+userY = 2
 
 ## Function that randomize the choice for choosing states NORMAL and SLEEP
 def decision():
@@ -107,7 +107,7 @@ class Normal(smach.State):
             if user_cmd == "play":
                 user_cmd = 'noInput'
                 return 'goToPlay'
-            if self.counter == 4:
+            if self.counter == 5:
                 return 'goToSleep'           
             navigation(X,Y) # Request to service for navigate. (is simulated)
 
@@ -163,7 +163,7 @@ class Play(smach.State):
 def main():
     rospy.init_node('cmd_manager')
 
-    rospy.Subscriber("position", Pose2D, callbackPos) # subsriber get_position 
+    rospy.Subscriber("position", Pose2D, callbackPos)  
     rospy.Subscriber("cmd_string", String, callbackSta)
 
     # Create a SMACH state machine
